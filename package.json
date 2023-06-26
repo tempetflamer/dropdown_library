@@ -1,6 +1,6 @@
 {
   "name": "custom_dropdown_comp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple custom dropdown component",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
