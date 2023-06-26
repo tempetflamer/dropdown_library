@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = Dropdown;
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _react = _interopRequireDefault(require("react"));
-require("./Dropdown.css");
+require("./Dropdown.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function Dropdown(_ref) {
   let {
@@ -25,12 +25,9 @@ function Dropdown(_ref) {
     className: name,
     id: name,
     name: name
-  }, data[0].value ? data.map(val => /*#__PURE__*/_react.default.createElement("option", {
-    value: val.value,
-    key: val.value
-  }, val.name)) : data.map(val => /*#__PURE__*/_react.default.createElement("option", {
-    value: val.name,
-    key: val.name
+  }, data.map(val => /*#__PURE__*/_react.default.createElement("option", {
+    value: data[0].value ? val.value : val.name,
+    key: data[0].value ? val.value : val.name
   }, val.name))));
 }
 Dropdown.propTypes = {
