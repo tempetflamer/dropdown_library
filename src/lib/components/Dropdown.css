@@ -1,0 +1,10 @@
+.select-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    text-align: left;
+
+    label {
+        margin-bottom: 0.25rem;
+    }
+}
