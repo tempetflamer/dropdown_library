@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import './Dropdown.css'
+import './Dropdown.scss'
 
 export default function Dropdown({ textLabel, name, data }) {
   if (!data[0]) {
@@ -10,17 +10,12 @@ export default function Dropdown({ textLabel, name, data }) {
     <div className="select-wrapper">
       <label htmlFor={name}>{textLabel}</label>
       <select className={name} id={name} name={name}>
-        {data[0].value
-          ? data.map((val) => (
-              <option value={val.value} key={val.value}>
+        {data.map((val) => (
+              <option value={data[0].value ? val.value : val.name} key={data[0].value ? val.value : val.name}>
                 {val.name}
               </option>
             ))
-          : data.map((val) => (
-              <option value={val.name} key={val.name}>
-                {val.name}
-              </option>
-            ))}
+        }
       </select>
     </div>
   )

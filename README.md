@@ -3,7 +3,7 @@ A simple dropdown library of React components created for Openclassroom project 
 
 ## Installation
 
-Run the following command:`npm i dropdown`
+Run the following command:`npm i custom_dropdown_comp`
 
 ## Basic Dropdown
 
@@ -23,7 +23,7 @@ Pass the name that will be used in htmlFor on label element and in id & name on 
 
 > `arrayOf(object)`
 
-Pass an array of items to initialize the dropdown.
+Pass an array of items to initialize the dropdown. The array contains name (required) and value (optional).
 
 ### Component
 
@@ -36,17 +36,12 @@ export default function Dropdown({ textLabel, name, data }) {
     <div className="select-wrapper">
       <label htmlFor={name}>{textLabel}</label>
       <select className={name} id={name} name={name}>
-        {data[0].value
-          ? data.map((val) => (
-              <option value={val.value} key={val.value}>
+        {data.map((val) => (
+              <option value={data[0].value ? val.value : val.name} key={data[0].value ? val.value : val.name}>
                 {val.name}
               </option>
             ))
-          : data.map((val) => (
-              <option value={val.name} key={val.name}>
-                {val.name}
-              </option>
-            ))}
+        }
       </select>
     </div>
   )
@@ -55,31 +50,51 @@ export default function Dropdown({ textLabel, name, data }) {
 
 ## Usage
 
+> [CodeSandbox - Try it out in the browser](https://codesandbox.io/s/custom-dropdown-comp-n6cgxt)
+
+
 ```jsx
 import * as React from 'react'
 import {render} from 'react-dom'
-import Dropdown from 'dropdown'
+import Dropdown from 'custom_dropdown_comp'
 
-const departments = [
+const states = [
     {
-        name: 'Sales'
+        name: "Alabama",
+        value: "AL"
     },
     {
-        name: 'Marketing'
+        name: "Alaska",
+        value: "AK"
     },
     {
-        name: 'Engineering'
+        name: "American Samoa",
+        value: "AS"
     },
     {
-        name: 'Human Resources'
+        name: "Arizona",
+        value: "AZ"
     },
     {
-        name: 'Legal'
+        name: "Arkansas",
+        value: "AR"
+    },
+    {
+        name: "California",
+        value: "CA"
+    },
+    {
+        name: "Colorado",
+        value: "CO"
+    },
+    {
+        name: "Connecticut",
+        value: "CT"
     }
 ]
 
 render(
-<Dropdown textLabel="Department" name="department" data={departments} />,
+<Dropdown textLabel="States" name="states" data={states} />,
   document.getElementById('root'),
 )
 ```

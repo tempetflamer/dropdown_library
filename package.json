@@ -1,13 +1,13 @@
 {
   "name": "custom_dropdown_comp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple custom dropdown component",
   "dependencies": {
-    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "prop-types": "^15.8.1",
+    "sass": "^1.63.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
